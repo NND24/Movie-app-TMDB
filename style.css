@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+  background-color: darkslateblue;
+  max-width: 1340px;
+}
+
+.header {
+  width: 100%;
+}
+
+.header__container {
+  height: 60px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 15px;
+  background-color: #ffffff8f;
+}
+
+.header__container input {
+  background-color: darkslateblue;
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.header__container input:focus {
+  background-color: #fff;
+  color: black;
+}
+
+.main {
+  margin-left: 15px;
+  margin-right: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie {
+  position: relative;
+  width: calc(100% / 5);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff8f;
+}
+
+.movie img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px 10px;
+  margin-top: auto;
+}
+
+.movie-name {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.movie-rating {
+  font-size: 16px;
+  font-weight: bolder;
+  background-color: #00000080;
+  padding: 2px 3px;
+  border-radius: 2px;
+}
+
+.movie-rating.green {
+  color: lightgreen;
+}
+
+.movie-rating.orange {
+  color: orange;
+}
+
+.movie-rating.red {
+  color: red;
+}
+
+.overview {
+  position: absolute;
+  bottom: -20px;
+  opacity: 0;
+  background-color: #fff;
+  padding: 20px;
+  transition: all 0.5s ease;
+}
+
+.movie:hover .overview {
+  bottom: 0;
+  opacity: 1;
+}
+
+.overview-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tags {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.tag {
+  background-color: orange;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.tag.selected {
+  background-color: brown;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 20px;
+}
+
+.pagination .btn {
+  padding: 10px;
+  background-color: #cccccc63;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.know-more {
+  padding: 6px;
+  cursor: pointer;
+  background-color: orange;
+  color: #fff;
+}
+
+.movie-popup {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0 50px;
+  background-color: rgba(0, 0, 0, 0.384);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+}
+
+.next-movie,
+.prev-movie {
+  color: #fff;
+  background-color: #ffffff50;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.movie-container .movie-title {
+  font-size: 30px;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.movie-container .movie-preview {
+  border: 1px solid red;
+  width: 500px;
+  height: 300px;
+}
+
+.movie-pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.movie-pagination div {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bolder;
+  border-radius: 999px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid palevioletred;
+  cursor: pointer;
+}
+
+.movie-pagination div.active {
+  background-color: orange;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  background-color: #ffffff50;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.embed.hide {
+  display: none;
+}
+
+.embed.show {
+  display: inline-block;
+}
